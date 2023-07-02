@@ -19,7 +19,7 @@ export default {
   components: {
     AddBlog,
     ShowBlog,
-    BlogHeader
+    BlogHeader,
   }
 }
 </script>
