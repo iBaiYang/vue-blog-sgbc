@@ -49,36 +49,36 @@
 
 <script>
 export default {
-name: 'add-blog',
-data () {
-    return {
-    blog:{
-        title:"",
-        content:"",
-        categories:[],
-        author: ""
+    name: 'add-blog',
+    data () {
+        return {
+            blog:{
+                title:"",
+                content:"",
+                categories:[],
+                author: ""
+            },
+            authors:[
+                "zhangsan",
+                "lisi",
+                "wangwu"
+            ],
+            submitted: false
+        }
     },
-    authors:[
-        "zhangsan",
-        "lisi",
-        "wangwu"
-    ],
-    submitted: false
+    methods:{
+        post:function(){
+            this.$http.get("https://jsonplaceholder.typicode.com/posts", {
+                title: this.blog.title,
+                body: this.blog.content,
+                userId: 1
+            })
+            .then(function(data){
+                console.log(data);
+                this.submitted = true;
+            })
+        }
     }
-},
-methods:{
-    post:function(){
-        this.$http.post("https://jsonplaceholder.typicode.com/posts", {
-            title: this.blog.title,
-            body: this.blog.content,
-            userId: 1
-        })
-        .then(function(data){
-            console.log(data);
-            this.submitted = true;
-        })
-    }
-}
 }
 </script>
 
