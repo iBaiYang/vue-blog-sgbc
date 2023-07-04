@@ -12,10 +12,9 @@
             </article>
         </div>
     </div>
-  </template>
-  
-  <script>
- 
+</template>
+
+<script>
 export default {
     name: 'show-blog',
     data() {
@@ -65,9 +64,9 @@ export default {
         }
     }
   }
-  </script>
-  
-  <style>
+</script>
+
+<style>
   #show-blog {
     max-width: 800px;
     margin: 0, auto;
@@ -91,5 +90,5 @@ export default {
     width: 100%;
     box-sizing: border-box;
   }
-  </style>
+</style>
   

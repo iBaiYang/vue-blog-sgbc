@@ -10,15 +10,15 @@
 </template>
 
 <script>
-import AddBlog from './components/AddBlog'
-import ShowBlog from './components/ShowBlog'
+// import AddBlog from './components/AddBlog'
+// import ShowBlog from './components/ShowBlog'
 import BlogHeader from './components/BlogHeader'
 
 export default {
   name: 'App',
   components: {
-    AddBlog,
-    ShowBlog,
+    // AddBlog,
+    // ShowBlog,
     BlogHeader,
   }
 }
