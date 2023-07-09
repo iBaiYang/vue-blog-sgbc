@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
     name: 'single-blog',
     data() {
@@ -21,9 +23,36 @@ export default {
         }
     },
     created() {
-        this.$http.get("https://jsonplaceholder.typicode.com/posts/" + this.id)
-        .then(function(data){
-            this.blog = data.body;
+        // this.$http.get("https://jsonplaceholder.typicode.com/posts/" + this.id)
+        // .then(function(data){
+        //     this.blog = data.body;
+        // });
+
+        // var _this = this
+        // axios.get("https://jsonplaceholder.typicode.com/posts/" + this.id)
+        // .then((data) => {
+        //     return data.data;
+        // })
+        // .then(function(data){
+        //     _this.blog = data;
+        // });
+
+        // axios.get("https://jsonplaceholder.typicode.com/posts/" + this.id)
+        // .then((data) => {
+        //     return data.data;
+        // })
+        // .then((data) => {
+        //     this.blog = data;
+        // });
+
+        // axios.get("https://jsonplaceholder.typicode.com/posts/" + this.id)
+        // .then((data) => {
+        //     this.blog = data.data;
+        // });
+
+        axios.get("/posts/" + this.id)
+        .then((data) => {
+            this.blog = data.data;
         });
     },
     methods: {

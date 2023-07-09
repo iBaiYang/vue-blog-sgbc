@@ -5,11 +5,16 @@ import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
 import App from './App'
 import Routes from './routes'
+import axios from 'axios'
 
 Vue.config.productionTip = false
 
 Vue.use(VueResource)
 Vue.use(VueRouter)
+
+axios.defaults.baseURL = "https://jsonplaceholder.typicode.com"
+// axios.defaults.headers.common["Authorization"] = "Token"
+// axios.defaults.headers.post["Content-type"] = "application/json"
 
 // Vue.directive('rainbow', {
 //   bind(el, binding, vnode) {

@@ -48,6 +48,9 @@
 </template>
 
 <script>
+// import axios from 'axios'
+import axios from '../axios-config'
+
 export default {
     name: 'add-blog',
     data () {
@@ -68,13 +71,31 @@ export default {
     },
     methods:{
         post:function(){
-            this.$http.get("https://jsonplaceholder.typicode.com/posts", {
+            // this.$http.post("https://jsonplaceholder.typicode.com/posts", {
+            //     title: this.blog.title,
+            //     body: this.blog.content,
+            //     userId: 1
+            // })
+            // .then(function(data){
+            //     this.submitted = true;
+            // })
+
+            // var _this = this
+            // axios.post("https://jsonplaceholder.typicode.com/posts", {
+            //     title: this.blog.title,
+            //     body: this.blog.content,
+            //     userId: 1
+            // })
+            // .then(function(data){
+            //     _this.submitted = true;
+            // })
+
+            axios.post("https://jsonplaceholder.typicode.com/posts", {
                 title: this.blog.title,
                 body: this.blog.content,
                 userId: 1
             })
-            .then(function(data){
-                console.log(data);
+            .then((data) => {
                 this.submitted = true;
             })
         }
